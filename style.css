@@ -1,0 +1,722 @@
+/* ==========================================
+   BASIC RESET — removes default spacing the
+   browser adds, so WE control everything
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;   /* near-black background */
+  color: #ffffff;              /* white text */
+  line-height: 1.6;
+}
+
+/* A reusable centered wrapper so content
+   doesn't stretch too wide on big screens */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+.navbar {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #1f1f1f;
+  padding: 18px 0;
+  position: sticky;   /* menu stays on top when scrolling */
+  top: 0;
+}
+
+.navbar-inner {
+  display: flex;               /* puts logo left, links right */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;       /* removes the underline */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #22c55e;              /* the "Media" part in GREEN */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;                   /* space between menu links */
+}
+
+.nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;      /* smooth color change on hover */
+}
+
+.nav-links a:hover {
+  color: #22c55e;              /* link turns green on hover */
+}
+
+/* The green "Get a Quote" button */
+.nav-btn {
+  background-color: #22c55e !important;
+  color: #0a0a0a !important;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  background-color: #16a34a !important;
+}
+
+/* ==========================================
+   HERO — the big first section
+   ========================================== */
+.hero {
+  padding: 120px 0;            /* big space top and bottom */
+}
+
+.hero-tag {
+  color: #22c55e;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  color: #b0b0b0;
+  font-size: 18px;
+  max-width: 550px;            /* keeps the text line short & readable */
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* Shared button style */
+.btn {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Solid green button */
+.btn-primary {
+  background-color: #22c55e;
+  color: #0a0a0a;
+}
+
+/* Green outline button */
+.btn-outline {
+  border: 2px solid #22c55e;
+  color: #22c55e;
+}
+/* ==========================================
+   SERVICES SECTION
+   ========================================== */
+.services {
+  padding: 100px 0;
+}
+
+/* Reuses the same green label style as the hero */
+.section-tag {
+  color: #22c55e;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+
+.section-text {
+  color: #b0b0b0;
+  max-width: 550px;
+  margin-bottom: 50px;
+}
+
+/* THE GRID — 3 cards per row */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ONE CARD */
+.service-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  padding: 32px;
+  border-radius: 12px;
+  transition: all 0.3s;   /* makes hover smooth */
+}
+
+/* When the mouse is over a card... */
+.service-card:hover {
+  border-color: #22c55e;
+  transform: translateY(-6px);   /* card lifts up */
+}
+
+.service-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #999999;
+  font-size: 14px;
+}
+/* ==========================================
+   WHY CHOOSE US / ABOUT SECTION
+   ========================================== */
+.about {
+  padding: 100px 0;
+  background-color: #0f0f0f;   /* slightly lighter than page — subtle separation */
+}
+
+/* Split the section into 2 columns:
+   text on the left, stats on the right */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-paragraph {
+  color: #b0b0b0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* The 2x2 grid of stat cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  border-color: #22c55e;
+  transform: translateY(-6px);
+}
+
+.stat-card h3 {
+  color: #22c55e;
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  color: #999999;
+  font-size: 14px;
+}
+/* ==========================================
+   OUR WORK SECTION
+   ========================================== */
+.work {
+  padding: 100px 0;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.work-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  overflow: hidden;          /* keeps image corners rounded */
+  transition: all 0.3s;
+}
+
+.work-card:hover {
+  border-color: #22c55e;
+  transform: translateY(-6px);
+}
+
+/* The colored "image" area on top of each card */
+.work-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Six different green/black gradient placeholders */
+.work-1 { background: linear-gradient(135deg, #22c55e, #0a0a0a); }
+.work-2 { background: linear-gradient(135deg, #0a0a0a, #16a34a); }
+.work-3 { background: linear-gradient(45deg, #22c55e, #064e3b); }
+.work-4 { background: linear-gradient(45deg, #064e3b, #0a0a0a); }
+.work-5 { background: linear-gradient(135deg, #16a34a, #052e16); }
+.work-6 { background: linear-gradient(135deg, #052e16, #22c55e); }
+
+/* The "View Project" text — hidden until hover */
+.work-img span {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  opacity: 0;                /* invisible by default */
+  transition: opacity 0.3s;
+}
+
+.work-card:hover .work-img span {
+  opacity: 1;                /* appears on hover */
+}
+
+.work-card h3 {
+  font-size: 18px;
+  padding: 20px 20px 6px;
+}
+
+.work-card p {
+  color: #22c55e;
+  font-size: 13px;
+  padding: 0 20px 20px;
+}
+/* ==========================================
+   TESTIMONIALS SECTION
+   ========================================== */
+.testimonials {
+  padding: 100px 0;
+  background-color: #0f0f0f;   /* lighter shade — same trick as About */
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  border-color: #22c55e;
+  transform: translateY(-6px);
+}
+
+/* The quote itself */
+.testimonial-text {
+  color: #cccccc;
+  font-size: 15px;
+  font-style: italic;        /* slanted text = "someone is speaking" */
+  margin-bottom: 24px;
+}
+
+/* The author row: avatar circle + name */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* A green circle with the first letter of the name */
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  background-color: #22c55e;
+  color: #0a0a0a;
+  border-radius: 50%;        /* 50% radius = perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;            /* circle never gets squished */
+}
+
+.testimonial-author h4 {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.testimonial-author p {
+  color: #777777;
+  font-size: 13px;
+}
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+.contact {
+  padding: 100px 0;
+}
+
+/* Two columns: info left, form right */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-info-text {
+  color: #b0b0b0;
+  margin-bottom: 32px;
+}
+
+/* One clickable contact row (email / whatsapp) */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  border-color: #22c55e;
+  transform: translateY(-3px);
+}
+
+.contact-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.contact-item h4 {
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.contact-item p {
+  color: #999999;
+  font-size: 14px;
+}
+
+/* THE FORM */
+.contact-form {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+/* Style the typing boxes */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: inherit;     /* matches the site font */
+  margin-bottom: 16px;
+  outline: none;            /* removes the default blue outline */
+}
+
+/* Green glow when typing in a box */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #22c55e;
+}
+
+/* Let the user resize the message box only vertically */
+.contact-form textarea {
+  resize: vertical;
+}
+
+.form-btn {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-note {
+  color: #666666;
+  font-size: 12px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+  border-top: 1px solid #1f1f1f;
+  padding: 30px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  color: #666666;
+  font-size: 13px;
+}
+/* ==========================================
+   MOBILE RESPONSIVENESS
+   These rules ONLY apply on small screens
+   ========================================== */
+
+/* Tablets and small laptops (max 900px) */
+@media (max-width: 900px) {
+
+  /* 3-column grids become 2 columns */
+  .services-grid,
+  .work-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact section stacks vertically */
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Phones (max 640px) */
+@media (max-width: 640px) {
+
+  /* All grids become 1 column — cards stack vertically */
+  .services-grid,
+  .work-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About section stacks too */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Smaller hero title so it fits the screen */
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  /* Less padding = less empty space on small screens */
+  .hero {
+    padding: 70px 0;
+  }
+
+  .services,
+  .about,
+  .work,
+  .testimonials,
+  .contact {
+    padding: 60px 0;
+  }
+
+  /* Navbar: smaller links, tighter spacing */
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-btn {
+    padding: 8px 14px;
+  }
+
+  /* Footer stacks */
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Buttons full width — easier to tap with a thumb */
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    text-align: center;
+  }
+}
+/* ==========================================
+   SCROLL ANIMATIONS
+   ========================================== */
+html {
+  scroll-behavior: smooth;   /* menu links glide instead of jump */
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== CONTACT FORM FIX ===== */
+.contact-inner form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-inner form input[type="text"],
+.contact-inner form input[type="email"],
+.contact-inner form textarea {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-inner form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-inner form input:focus,
+.contact-inner form textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
+.contact-inner form button[type="submit"] {
+  background: #22c55e;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.contact-inner form button[type="submit"]:hover {
+  opacity: .85;
+}
+/* ===== CONTACT FORM ===== */
+.contact-inner form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-inner form input[type="text"],
+.contact-inner form input[type="email"],
+.contact-inner form textarea {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-inner form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-inner form input:focus,
+.contact-inner form textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
+.contact-inner form button[type="submit"] {
+  background: #22c55e;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.contact-inner form button[type="submit"]:hover {
+  opacity: .85;
+}
+
+#form-status {
+  color: #22c55e;
+  font-weight: 600;
+  margin: 0;
+}
